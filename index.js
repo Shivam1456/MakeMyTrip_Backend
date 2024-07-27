@@ -241,9 +241,9 @@ app.post('/send-mail', async (req, res) => {
     let info = await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
-      subject: 'Flight Booking Confirmation',
+      subject: 'Flight Booking Confirmation -- Dummy Test Mail',
       text: `Hello ${name}, your flight from ${flightDetails.from} to ${flightDetails.to} has been booked successfully.`,
-      html: `<h1>Booking Confirmation</h1><p>Hello ${name},</p><p>Your flight from ${flightDetails.from} (${flightDetails.fromAirport}) to ${flightDetails.to} (${flightDetails.toAirport}) on ${flightDetails.date} has been booked successfully.</p>`,
+      html: `<h1>Booking Confirmation -- Dummy Test Mail </h1><p>Hello ${name},</p><p>Your flight from ${flightDetails.from} (${flightDetails.fromAirport}) to ${flightDetails.to} (${flightDetails.toAirport}) on ${flightDetails.date} has been booked successfully.</p>`,
     });
 
     console.log('Message sent: %s', info.messageId);
