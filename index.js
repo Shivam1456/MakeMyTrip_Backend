@@ -261,7 +261,7 @@ app.post('/send-hotel-mail', async (req, res) => {
 
   try {
     let transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
+      host: process.env.EMAIL_HOST,
       port: 587,
       secure: false,
       auth: {
@@ -273,9 +273,9 @@ app.post('/send-hotel-mail', async (req, res) => {
     let info = await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
-      subject: 'Hotel Booking Confirmation(This is Test mail only)',
+      subject: 'Hotel Booking Confirmation --Dummy Test Mail',
       text: `Hello ${customerName}, your hotel booking at ${hotel} has been confirmed. Room Class: ${roomClass}, Room Count: ${roomCount}, Start Date: ${startDate}, End Date: ${endDate}, Total Price: ₹${totalPrice}.`,
-      html: `<h1>Booking Confirmation (Test Mail just using for my project) </h1>
+      html: `<h1>Booking Confirmation -- Dummy Test Mail</h1>
              <p>Hello ${customerName},</p>
              <p>Your hotel booking at <strong>${hotel}</strong> has been confirmed.</p>
              <p>Room Class: ${roomClass}<br/>
