@@ -273,9 +273,9 @@ app.post('/send-hotel-mail', async (req, res) => {
     let info = await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
-      subject: 'Hotel Booking Confirmation',
+      subject: 'Hotel Booking Confirmation(This is Test mail only)',
       text: `Hello ${customerName}, your hotel booking at ${hotel} has been confirmed. Room Class: ${roomClass}, Room Count: ${roomCount}, Start Date: ${startDate}, End Date: ${endDate}, Total Price: ₹${totalPrice}.`,
-      html: `<h1>Booking Confirmation</h1>
+      html: `<h1>Booking Confirmation (Test Mail just using for my project) </h1>
              <p>Hello ${customerName},</p>
              <p>Your hotel booking at <strong>${hotel}</strong> has been confirmed.</p>
              <p>Room Class: ${roomClass}<br/>
